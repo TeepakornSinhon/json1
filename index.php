@@ -9,25 +9,26 @@
 </head>
 <body>
     <button id="btnJSON1">JSON 1 </button>
-    name:<span id="fname"></span> <br>
+    name:<span id="fname"></span> <br/>
     Sname:<span id="lname"></span>
 </body>
 
 <script>
 function loadJSON(){
     var url="https://cj-android-demon.herokuapp.com/json1.php";
-    $.get(url, (data,status)=>{
-        console.log(data);
-        var jData = JSON.parse(data);
-        console.log(jData.fname);
-        console.log(jData.lname);
-        $("#fname").text(data.fname);
-        $("#lname").text(data.lname);
-    });
+        $.getJSON(url)
+        .done(()=>{
+            console.log(data);
+            $("#fname").text(data.fname);
+        })
+        .fail((xhr, status, err)=>{
+            
+        });
+
 }
 
 $(()=>{
     $("#btnJSON1").click(loadJSON);
-})
+});
 </script>
 </html>
