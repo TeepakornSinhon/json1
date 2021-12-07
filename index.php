@@ -33,6 +33,7 @@ function loadJSONArray(){
                     line = "<td>" + (k+1) +"</td>"
                     line = "<td>" + item.fname +"</td>"
                     line = "<td>" + item.lname +"</td>"
+                    line = "</tr>";
                 $("#tblData").append(line);
             })
         })
