@@ -21,14 +21,13 @@
 </body>
 <script>
  
-function loadJSON(){
+function loadJSONArray(){
     var url = "https://cj-android-demon.herokuapp.com/json2.php";
 
     $.getJSON(url)
         .done((data)=>{
             console.log(data);
             $.each(data, (k, item)=>{
-                console.log(k);
                 console.log(item);
                 var line = "<tr>";
                     line = "<td>" + (k+1) +"</td>"
@@ -38,12 +37,12 @@ function loadJSON(){
             })
         })
         .fail((xhr, status, err)=>{
-
+            console.log("error")
         });
 }
 
 $(()=>{
-    loadJSON();
+    loadJSONArray();
 });
 </script>
 </html>
