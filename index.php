@@ -9,6 +9,8 @@
 </head>
 <body>
     <button id="btnJSON1">JSON 1 </button>
+    name:<span id="fname"></span> <br>
+    Sname:<span id="lname"></span>
 </body>
 
 <script>
@@ -19,6 +21,8 @@ function loadJSON(){
         var jData = JSON.parse(data);
         console.log(jData.fname);
         console.log(jData.lname);
+        $("#fname").text(data.fname);
+        $("#lname").text(data.lname);
     });
 }
 
